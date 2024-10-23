@@ -1,0 +1,2 @@
+Sex,Age,BMI,Primary.disease,Conditioning.regimen,Stem.cell.source,Sex.match,ABO.match,TNC.count,CD34.count,Donor.type,GVHD.prophylaxis,Antithymocyte.globulin.in.conditioning,HLA.mismatch
+Male,32,23.16,BMF,RIC,PB+BM,Male to Male,Matched,5.94,3.124,Haploidentical,CSA+MMF+MTX,Yes,3

@@ -209,7 +209,7 @@ present.odds <- function(stationary.data.list,
 population <- 'adults'
 stationary.data.list <- get.file(file=paste('test/', population, '-stationary', sep=''))
 dynamic.data.list <- get.file(file=paste('test/', population, '-dynamic', sep=''))
-dynamic.data.list[, grep('vitalsigns_[0-9]{3}', names(dynamic.data.list))] <- NA ##删除护理记录
+dynamic.data.list[, grep('vitalsigns_[0-9]{3}', names(dynamic.data.list))] <- NA 
 res.1 <- present.odds(stationary.data.list=stationary.data.list,
                       dynamic.data.list=dynamic.data.list,
                       population=population)
@@ -277,7 +277,7 @@ risk.level <- function(cum.odds.list,
         risk.level.234[t] <- 'high risk'
       }else{
         if(cum.odds.234[t]>cutoff.234.low[t-16]){
-          risk.level.234[t] <- 'medium risk'
+          risk.level.234[t] <- 'intermediate risk'
         }else{
           risk.level.234[t] <- 'low risk'
         }
@@ -293,7 +293,7 @@ risk.level <- function(cum.odds.list,
         risk.level.34[t] <- 'high risk'
       }else{
         if(cum.odds.34[t]>cutoff.34.low[t-16]){
-          risk.level.34[t] <- 'medium risk'
+          risk.level.34[t] <- 'intermediate risk'
         }else{
           risk.level.34[t] <- 'low risk'
         }
@@ -305,8 +305,8 @@ risk.level <- function(cum.odds.list,
       if( (risk.level.34[t]=='high risk') | (risk.level.234[t]=='high risk') ){
         risk.level[t] <- 'high risk'
       }else{
-        if( (risk.level.34[t]=='medium risk') & (risk.level.234[t]=='medium risk') ){
-          risk.level[t] <- 'medium risk'
+        if( (risk.level.34[t]=='intermediate risk') & (risk.level.234[t]=='intermediate risk') ){
+          risk.level[t] <- 'intermediate risk'
         }else{
           risk.level[t] <- 'low risk'
         }
